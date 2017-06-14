@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DIR=${1-'./'}
+
+cd $DIR || exit 1
+
+# Optionally try to install various dependencies so licensefinder can use the package manager without errors
+if [ -f 'Gemfile' ]; then
+  bundle install || true
+fi
+
+license_finder
