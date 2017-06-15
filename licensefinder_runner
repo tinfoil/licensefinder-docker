@@ -9,4 +9,12 @@ if [ -f 'Gemfile' ]; then
   bundle install || true
 fi
 
+if [ -f 'mix.exs' ]; then
+  mix deps.get || true
+fi
+
+if [ -f 'package.json' ]; then
+  npm install || true
+fi
+
 license_finder
