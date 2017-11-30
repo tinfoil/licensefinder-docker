@@ -13,7 +13,9 @@ if [ -f 'mix.exs' ]; then
   mix deps.get || true
 fi
 
-if [ -f 'package.json' ]; then
+if [ -f 'yarn.lock' ]; then
+  yarn install || true
+elif [ -f 'package.json' ]; then
   npm install || true
 fi
 

@@ -12,6 +12,9 @@ RUN gem install --no-document specific_install \
 # Install the hex Elixir package manager
 RUN mix local.hex --force
 
+# Install the yarn JS package manager
+RUN npm install --global yarn
+
 COPY licensefinder_runner /usr/local/bin
 
 WORKDIR /data
