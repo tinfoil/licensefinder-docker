@@ -6,8 +6,7 @@ RUN apk add --no-cache git ruby ruby-bundler ruby-json nodejs nodejs-npm elixir 
 # Add packages to support native package compilation
 RUN apk add --no-cache build-base ruby-dev libffi-dev
 
-RUN gem install --no-document specific_install \
-  && gem specific_install --location https://github.com/tinfoil/LicenseFinder --branch bsedat/hex-no-http
+RUN gem install --no-document --conservative license_finder
 
 # Install the hex Elixir package manager
 RUN mix local.hex --force
